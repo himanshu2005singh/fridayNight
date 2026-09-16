@@ -1,0 +1,7 @@
+{
+  "name": "friday-night-multiplex",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exact-paisa multiplex ticket pricing engine",
+  "scripts": { "start": "node server.js", "test": "node --test" }
+}

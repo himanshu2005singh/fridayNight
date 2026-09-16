@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Friday night | Multiplex counter</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead"><p class="kicker">Friday night / counter 01</p><h1>Make it a good seat.</h1><p class="subhead">A precise ticket total, ready before the queue gets restless.</p></header>
+    <section class="workspace" aria-label="Ticket booking calculator">
+      <form id="booking-form" class="panel booking-panel">
+        <div class="section-heading"><span>01</span><h2>Build the booking</h2></div><div id="tier-list" class="tier-list"></div>
+        <label class="member-toggle"><input id="member" type="checkbox"><span class="toggle-ui"></span><span><strong>Member booking</strong><small>10% off, up to ₹120</small></span></label>
+        <div class="offer-strip"><span>Festival offer</span><strong>₹50 off your tickets</strong></div><button class="primary-button" type="submit">Calculate total <span>→</span></button><p id="error" class="error" role="alert" hidden></p>
+      </form>
+      <aside class="panel receipt-panel" aria-live="polite"><div class="receipt-top"><div><p class="kicker">Your receipt</p><h2>Ticket total</h2></div><span class="receipt-mark">₹</span></div><div id="receipt" class="receipt-body"><p class="empty-state">Choose your seats<br>to see the full breakdown.</p></div></aside>
+    </section>
+    <section class="import-panel panel" aria-label="Messy price list importer">
+      <div class="section-heading"><span>02</span><h2>Import messy prices</h2></div>
+      <p class="import-help">Paste a JSON array of tier prices, then review rejected rows before applying cleaned prices.</p>
+      <textarea id="price-import-input" rows="5" spellcheck="false">[{"tier":" silver ","price":"₹150"},{"tier":"SILVER","price":"151"},{"tier":"Gold","price":"₹ 260.50"}]</textarea>
+      <button id="import-prices-button" class="primary-button" type="button">Import price list <span>→</span></button>
+      <p id="import-error" class="error" role="alert" hidden></p>
+      <pre id="import-report" class="import-report" hidden></pre>
+    </section>
+    <footer><span>All prices include exact paisa rounding.</span><span>Secure counter pricing</span></footer>
+  </main><script src="errors.js"></script><script src="pricing.js"></script><script src="app.js"></script>
+</body>
+</html>
